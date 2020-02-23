@@ -199,9 +199,3 @@ function getRandomcookie(min, max) {
   }
   store5.getnumofcookie();
 store5.render();
-
-
-
-  
-  
-  
