@@ -49,8 +49,6 @@ Store.prototype.populateHourlySales = function () {
     var customersPerHour = Math.round(this.randomNumber() * this.avgCookie);
     this.hourSales.push(customersPerHour);
 
-
-
   }
 };
 
@@ -107,20 +105,20 @@ var store5 = new Store('Lima', 20, 38, 2.3);
 store5.randomNumber();
 store5.populateHourlySales();
 store5.totalSold();
-// store5.renderRow();
+store5.renderRow();
 
-// function addLocationSubmitted(event) {
-//     event.preventDefault();
-//     var formElement = event.target;
+function addLocationSubmitted(event) {
+    event.preventDefault();
+    var formElement = event.target;
   
-//     var allStores = new Store(formElement.storeName.value,
-//       Number(formElement.minimumCust.value),
-//       Number(formElement.maximumCust.value), Number(formElement.averageSales.value))
-//   new.allStores.randomNumber();
-//   new.allStores.populateHourlySales();
-//   new.allStores.totalSold();
-//   new.allStores.renderRow();
-// }
+    var allStores = new Store(formElement.storeName.value,
+      Number(formElement.minimumCust.value),
+      Number(formElement.maximumCust.value), Number(formElement.averageSales.value))
+  new.allStores.randomNumber();
+  new.allStores.populateHourlySales();
+  new.allStores.totalSold();
+  new.allStores.renderRow();
+}
 
 var storeFormElement = document.getElementById('demo');
 storeFormElement.addEventListener('submit', addLocationSubmitted);
