@@ -1,5 +1,6 @@
 
 var totalperhour= [];
+var total=0;
 var store1 = {
     name : 'seattle',
     MinCust: 23,
@@ -9,10 +10,13 @@ var store1 = {
     getnumofcookie : function(){
         for (var i = 0; i < this.hours.length; i++) {
             totalperhour.push(getRandomcookie(this.MinCust,this.MaxCust));
+            total+=totalperhour[i];
             console.log(totalperhour[i]);
         }
+    console.log(total);
         
     },
+
     render : function(){
         var container = document.getElementById('cookie-stand');
         var articleEl = document.createElement('article');
@@ -27,10 +31,12 @@ var store1 = {
         articleEl.appendChild(ulEl);
           for (var i = 0; i < this.hours.length; i++){
           var liEl = document.createElement('li');
-          liEl.textContent = `${this.hours[i]} ${totalperhour[i]}`;
+          liEl.textContent = `${this.hours[i]} ${totalperhour[i]} cookies`;
           ulEl.appendChild(liEl);
         }
-      }
+        liEl.textContent = `total ${total}`;
+ 
+    }
 };
 
 
@@ -51,6 +57,7 @@ var store2 = {
     getnumofcookie : function(){
         for (var i = 0; i < this.hours.length; i++) {
             totalperhour.push(getRandomcookie(this.MinCust,this.MaxCust));
+            total+=totalperhour[i];
             console.log(totalperhour[i]);
         }
     },
@@ -68,9 +75,11 @@ var store2 = {
         articleEl.appendChild(ulEl);
           for (var i = 0; i < this.hours.length; i++){
           var liEl = document.createElement('li');
-          liEl.textContent = `${this.hours[i]} ${totalperhour[i]}`;
+          liEl.textContent = `${this.hours[i]} ${totalperhour[i]} cookies`;
           ulEl.appendChild(liEl);
         }
+        liEl.textContent = `total ${total}`;
+
       }
 };
 function getRandomcookie(min, max) {
@@ -90,6 +99,7 @@ var store3 = {
     getnumofcookie : function(){
         for (var i = 0; i < this.hours.length; i++) {
             totalperhour.push(getRandomcookie(this.MinCust,this.MaxCust));
+            total+=totalperhour[i];
             console.log(totalperhour[i]);
         }
     },
@@ -107,9 +117,11 @@ var store3 = {
         articleEl.appendChild(ulEl);
           for (var i = 0; i < this.hours.length; i++){
           var liEl = document.createElement('li');
-          liEl.textContent = `${this.hours[i]} ${totalperhour[i]}`;
+          liEl.textContent = `${this.hours[i]} ${totalperhour[i]} cookies`;
           ulEl.appendChild(liEl);
-        }
+        } 
+        liEl.textContent = `total ${total}`;
+
       }
 };
 function getRandomcookie(min, max) {
@@ -131,6 +143,7 @@ var store4 = {
     getnumofcookie : function(){
         for (var i = 0; i < this.hours.length; i++) {
             totalperhour.push(getRandomcookie(this.MinCust,this.MaxCust));
+            total+=totalperhour[i];
             console.log(totalperhour[i]);
         }
     },
@@ -148,9 +161,12 @@ var store4 = {
         articleEl.appendChild(ulEl);
           for (var i = 0; i < this.hours.length; i++){
           var liEl = document.createElement('li');
-          liEl.textContent = `${this.hours[i]} ${totalperhour[i]}`;
+          liEl.textContent = `${this.hours[i]} ${totalperhour[i]} cookies`;
           ulEl.appendChild(liEl);
         }
+        liEl.textContent = `total ${total}`;
+
+
       }
 };
 function getRandomcookie(min, max) {
@@ -161,15 +177,20 @@ function getRandomcookie(min, max) {
   store4.getnumofcookie();
 store4.render();
 
-var store5 = {
-    name : 'Lima	',
-    MinCust: 2,
-    MinCustt:16,
-    Avgcookie :4.6,
+
+
+
+
+var store5= {
+    name : 'Lima',
+    MinCust: 20,
+    MinCustt:38,
+    Avgcookie :2.3,
     hours: ['6 am','7 am','8 am','9 am','10 am', '11 am','12 pm','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm','8 pm'],
     getnumofcookie : function(){
         for (var i = 0; i < this.hours.length; i++) {
             totalperhour.push(getRandomcookie(this.MinCust,this.MaxCust));
+            total+=totalperhour[i];
             console.log(totalperhour[i]);
         }
     },
@@ -187,9 +208,12 @@ var store5 = {
         articleEl.appendChild(ulEl);
           for (var i = 0; i < this.hours.length; i++){
           var liEl = document.createElement('li');
-          liEl.textContent = `${this.hours[i]} ${totalperhour[i]}`;
+          liEl.textContent = `${this.hours[i]} ${totalperhour[i]} cookies`;
           ulEl.appendChild(liEl);
         }
+        liEl.textContent = `total ${total}`;
+
+
       }
 };
 function getRandomcookie(min, max) {
