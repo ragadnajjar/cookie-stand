@@ -8,8 +8,8 @@ var allStores = [];
 var totals = [];
 var totalsperhour = [];
 
-function Store(location, minCust, maxCust, avgCookie) {
-  this.location = location;
+function Store(lostoreion, minCust, maxCust, avgCookie) {
+  this.lostoreion = lostoreion;
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.avgCookie = avgCookie;
@@ -21,7 +21,7 @@ Store.prototype.renderRow = function () {
 
   var trElement = document.createElement('tr');
   var tdElement = document.createElement('td');
-  tdElement.textContent = this.location;
+  tdElement.textContent = this.lostoreion;
   trElement.appendChild(tdElement);
   for (var i = 0; i < hours.length; i++) {
     tdElement = document.createElement('td');
@@ -124,20 +124,6 @@ store5.totalSold();
 store5.renderRow();
 allStores.push(store5);
 totalhours();
-
-// function addLocationSubmitted(event) {
-//   event.preventDefault();
-//   var formElement = event.target;
-
-//   var allStores = new Store(formElement.storeName.value,
-//     Number(formElement.minimumCust.value),
-//     Number(formElement.maximumCust.value), Number(formElement.averageSales.value))
-//   allStores.randomNumber();
-//   allStores.populateHourlySales();
-//   allStores.totalSold();
-//   sallStores.renderRow();
-// }
-
 function totalhours() {
   var total = 0;
   var bigTotal = 0;
@@ -160,3 +146,41 @@ function totalhours() {
   trElement.appendChild(tdElement3);
   theadElement.appendChild(trElement);
 }
+
+
+
+
+var storeForm = document.getElementById('storeForm');
+storeForm.addEventListener('submit' , function(event){
+  event.preventDefault();
+  console.log(event.target);
+  var storeName = event.target.name.value;
+  var maxCust = event.target.maxCust.value.split(',');
+  var mainCust = event.target.mainCust.value;
+  var Paris = event.target.Paris.checked;
+  var Tokyo = event.target.Tokyo.checked;
+  var Seattle = event.target.Seattle.checked;
+  var newStore = new Store(storeName , maxCust ,Seattle,Paris,Tokyo, mainCust);
+  console.log(Store);
+  newstore.render();
+});
+
+new store('Jordan' , ['24' , '30' ],true,false,true, );
+
+new store('America',['58' , '2.5' , '45'],true, false, false,);
+
+
+new store('syria',['14' , '45'], true, true, true , 'Persian');
+
+
+for(var i = 0 ; i< allStores.length ; i++){
+  allStores[i].render();
+}
+function getRandomAge(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+
+
